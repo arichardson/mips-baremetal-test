@@ -63,7 +63,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(QEMU_CHERI ${CHERI_SDK}/qemu-system-cheri)
 
 # 100k instructions should be enough to run these tests
-set(QEMU_BREAKPOINT_ARGS -bp 0xffffffff80000080 -bc 100000)
+set(QEMU_BREAKPOINT_ARGS -bc 100000)
+# we have an exception handler now, but to break on exception add this: -bp 0xffffffff80000080
 
 enable_testing()
 
